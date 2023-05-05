@@ -28,7 +28,7 @@
             <a class="nav-link active" href="#">Link</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="login">Iniciar Sessió</a>
+            <a class="nav-link active" href="http://localhost:8000/api/auth/login/">Iniciar Sessió</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="http://localhost:8000/admin/">Portal Administració</a>
@@ -38,6 +38,10 @@
   
       </div>
       <!-- Collapsible wrapper -->
+      <!-- "{{ '{' }}" % if user.is_authenticated %"{{ '{' }}"
+        <div>Benvingut, "{{ '{' }}" user.email "{{ '}' }}"</div>
+      "{{ '{' }}" % endif % "{{ '}' }}" -->
+      
     </div>
     <!-- Container wrapper -->
   </nav>
