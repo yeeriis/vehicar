@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { LoginComponent } from './login/login.component';
+import { CarsCardsComponent } from './cars-cards/cars-cards.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 const routes: Routes = [
   {
@@ -16,7 +19,20 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
+  {
+    path: '',
+    component: CarsCardsComponent
+  },
+  {
+    path: 'cars/:id',
+    component: CarDetailComponent
+  },
+  {
+    path: 'register-user',
+    component: UserRegisterComponent
+  },
+  
 ];
 
 @NgModule({

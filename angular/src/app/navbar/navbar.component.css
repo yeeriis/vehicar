@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #121212;
+}
+
+.links {
+    color: white;
+}
+
+.logo:hover {
+    border-radius: 15px;
+    opacity: 0.7;
+} 
+
+.logo {
+    border-radius: 15px;
+}

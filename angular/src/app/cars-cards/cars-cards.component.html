@@ -1,0 +1,33 @@
+<div class="ag-format-container">
+    <div class="ag-courses_box">
+      <div class="ag-courses_item" *ngFor="let car of cars" >
+        <a routerLink="/cars/{{car.id}}" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+  
+          <div class="ag-courses-item_title">
+            {{ car.marca }} {{ car.modelo }}
+          </div>
+  
+          <div class="ag-courses-item_date-box">
+            Potència:
+            <span class="ag-courses-item_date">
+              {{car.caballos}} CV
+            </span>
+          </div>
+          <div class="ag-courses-item_date-box">
+            Combustible:
+            <span class="ag-courses-item_date">
+              {{car.tipo_motor}}
+            </span>
+          </div>
+          <div class="ag-courses-item_date-box">
+            Any:
+            <span class="ag-courses-item_date">
+              {{car.anyo}}
+            </span>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+  </div>

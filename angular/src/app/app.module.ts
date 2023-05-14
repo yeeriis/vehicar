@@ -8,9 +8,11 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CarsCardsComponent } from './cars-cards/cars-cards.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 
 @NgModule({
@@ -21,6 +23,9 @@ import { FormsModule } from '@angular/forms';
     AdminLoginComponent,
     FooterComponent,
     NavbarComponent,
+    CarsCardsComponent,
+    CarDetailComponent,
+    UserRegisterComponent,
     
   ],
   imports: [

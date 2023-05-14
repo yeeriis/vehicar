@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:4200',
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Aplicaciones.Coches',
-    'Aplicaciones.Personas',
-    'rest_framework'
+    'Vehicar_Rentals',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'Vehicar.urls'
@@ -78,7 +84,7 @@ WSGI_APPLICATION = 'Vehicar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'vehicar.sqlite3',
+        'NAME': 'vehicar_rentals.sqlite3',
     }
 }
 
@@ -124,7 +130,9 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionsAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+        # 'rest_framework.permissions.IsAuthenticated',
+
     ]
 }
 
@@ -132,3 +140,8 @@ LOGIN_REDIRECT_URL = '/'
 
 ALLOWED_HOSTS = ['*']
 
+# Subir imagenes: 
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
