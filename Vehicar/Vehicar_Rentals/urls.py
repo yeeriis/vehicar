@@ -1,11 +1,15 @@
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import *
+from . import views
 
-from .views import CocheView
 
 urlpatterns = [
     path('coches/', CocheView.as_view()),
+    path('coches/<int:id>', CocheDetailView.as_view()),
+    # path('coches/:id', CocheView.as_view()),
+
 ]
 
 if settings.DEBUG:

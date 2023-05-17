@@ -8,7 +8,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-import json
 
 
 
@@ -32,7 +31,16 @@ class LoginView(APIView):
             return Response({'message': 'Login successful'}, status=status.HTTP_200_OK)
         else:
             return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
-        
+
+class CocheDetailView(APIView):
+    def get(self, request, id):
+        coches = Coche.objects.filter(id=id)
+        data = {'coches':list(coches.values())}
+        return JsonResponse(data)
+
+
+    
+
 def cargar_imagen(request):
     if request.method == 'POST':
         formulario = MiFormulario(request.POST, request.FILES)
@@ -42,17 +50,3 @@ def cargar_imagen(request):
     else:
         formulario = MiFormulario()
     return render(request, 'cargar_imagen.html', {'formulario': formulario})
-
-def crear_usuario(request):
-    if request.method == 'POST':
-        datos = json.loads(request.body)
-        email = datos.get('email', '')
-        password = datos.get('password', '')
-        usuario = datos.get('usuario', '')
-        nombre = datos.get('nombre', '')
-        apellido = datos.get('apellido', '')
-        edad = datos.get('edad', '')
-        foto = datos.get('foto', '')
-
-        usuario = Persona.objects.create_user(usuario=usuario, email=email, password=password, nombre=nombre, apellido=apellido, edad=edad, foto=foto)
-        return JsonResponse({'usuario': usuario.usuario})

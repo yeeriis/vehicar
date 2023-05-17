@@ -1,5 +1,46 @@
-<div *ngIf="car">
-    <h2>{{car.marca}} {{car.modelo}}</h2>
-    <p>Year: {{car.anyo}}</p>
-    <p>Color: {{car.color}}</p>
-  </div>
+<div class="container" *ngFor="let car of coche">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    
+                    <div class="preview-pic tab-content">
+                      <div class="tab-pane active" id="pic-1"><img src={{car.foto}}></div>
+                    </div>
+                    
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">{{car.marca}} {{car.modelo}}</h3>
+                    <div class="rating">
+
+                        <span class="review-no">41 reviews</span>
+                    </div>
+                    <h4 class="price">Preu de lloguer: <span>{{car.precio}}</span></h4>
+                    <p class="vote">El <strong>91%</strong> dels clients els hi ha agradat aquest lloguer! <strong>(87 vots)</strong></p>
+                    <h5 class="sizes">Matricula:
+                        <span class="size" data-toggle="tooltip" title="small">{{car.matricula}}</span>
+                    </h5>
+                    <h5 class="sizes">Combustible:
+                        <span class="size" data-toggle="tooltip" title="small">{{car.tipo_motor}}</span>
+                    </h5>
+                    <h5 class="sizes">Potència:
+                        <span class="size" data-toggle="tooltip" title="small">{{car.caballos}} CV</span>
+                    </h5>
+                    <h5 class="sizes">Tipus de carrosseria:
+                        <span class="size" data-toggle="tooltip" title="small">{{car.tipo_carroceria}}</span>
+                    </h5>
+                    <h5 class="sizes">Color:
+                        <span class="size" data-toggle="tooltip" title="small">{{car.color}}</span>
+                    </h5>
+                    <h5 class="sizes">Antiguitat:
+                        <span class="size" data-toggle="tooltip" title="small">{{car.anyo}}</span>
+                    </h5>
+                    <div class="action">
+                        <button class="add-to-cart btn btn-default" type="button">Llogar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

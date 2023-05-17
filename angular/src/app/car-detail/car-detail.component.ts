@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CarsService } from '../cars-cards/cars-cards.service';
 import { Coche } from './car.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-car-detail',
@@ -10,22 +11,18 @@ import { Coche } from './car.model';
   styleUrls: ['./car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit {
-  car: Coche;
+  coche: any;
 
   constructor(
-    private route: ActivatedRoute,
+    private rutaCoche: ActivatedRoute,
     private carService: CarsService,
-    private location: Location
+    private http:HttpClient
   ){ }
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.carService.getCars().subscribe(car => {
-      this.car = car;
-    });
+    const id = Number(this.rutaCoche.snapshot.paramMap.get('id'));
+    this.carService.getCochesById(id).subscribe(coche => this.coche = coche);
   }
 
-  goBack(): void {
-    this.location.back();
-  }
+  
 }
