@@ -12,17 +12,17 @@
                     <h4 class="mt-1 mb-5 pb-1">Benvingut a Vehicar Rentals!</h4>
                   </div>
   
-                  <form (submit)="login()">
+                  <form (ngSubmit)="login()">
                     <p>Inicia Sessió</p>
   
                     <div class="form-outline mb-4">
-                      <input type="email" [(ngModel)]="email" id="form2Example11" class="form-control"
+                      <input type="email" [(ngModel)]="email" name="email" id="form2Example11" class="form-control"
                         placeholder="Correu electrònic" />
                       <label class="form-label" for="form2Example11">Usuari</label>
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="password" [(ngModel)]="password" id="form2Example22" class="form-control" 
+                      <input type="password" [(ngModel)]="password" name="password" id="form2Example22" class="form-control" 
                         placeholder="Contrasenya"/>
                       <label class="form-label" for="form2Example22">Contrasenya</label>
                     </div>

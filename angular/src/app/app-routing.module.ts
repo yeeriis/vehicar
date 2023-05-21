@@ -29,7 +29,7 @@ const routes: Routes = [
     component: CarDetailComponent
   },
   {
-    path: 'register-user',
+    path: 'register',
     component: UserRegisterComponent
   },
   

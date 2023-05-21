@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-user-register',
@@ -15,19 +17,37 @@ export class UserRegisterComponent {
   usuario: string;
   foto: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router:Router) {}
 
-  register() {
-    const data = { email: this.email, password: this.password };
-    this.http.post('http://localhost:8000/api/auth/login/', data).subscribe(
-      response => {
-        console.log(response);
-        alert("Acierto!")
+  enviarFormulario() {
+
+    const url = 'http://localhost:8000/api/register/';
+    const formData = {
+      email: this.email,
+      password: this.password,
+      nombre: this.nombre,
+      apellido: this.apellido,
+      edad: this.edad,
+      usuario: this.usuario,
+      foto: this.foto,
+    }
+
+    this.http.post( url, formData).subscribe(
+      (response) => {
+        // console.log('Usuario creado crrectamente:', response);
+        this.router.navigate(['/login']);        
       },
-      error => {
-        console.error(error);
-        alert("Error!")
+      (error) => {
+        console.log('Error al crear el usuario:', error);
       }
     );
   }
+
+  registrarUsuario(formData: any) {
+    const url = 'http://localhost:8000/api/register/';
+
+    return this.http.get(url , formData);
+  }
 }
+
+    

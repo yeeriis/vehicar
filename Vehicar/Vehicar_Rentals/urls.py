@@ -8,8 +8,6 @@ from . import views
 urlpatterns = [
     path('coches/', CocheView.as_view()),
     path('coches/<int:id>', CocheDetailView.as_view()),
-    # path('coches/:id', CocheView.as_view()),
-
 ]
 
 if settings.DEBUG:

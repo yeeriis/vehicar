@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -12,16 +14,17 @@ export class LoginComponent {
   email: string;
   password: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router:Router) {}
 
   login() {
+    
     const data = { email: this.email, password: this.password };
-    this.http.post('http://localhost:8000/api/auth/login/', data).subscribe(
-      response => {
+    this.http.post('http://localhost:8000/api/login/', data).subscribe(
+      (response) => {
         console.log(response);
-        alert("Acierto!")
+        this.router.navigate(['']);
       },
-      error => {
+      (error) => {
         console.error(error);
         alert("Error!")
       }

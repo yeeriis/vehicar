@@ -12,54 +12,48 @@
                                     <h4 class="mt-1 mb-5 pb-1">Benvingut a Vehicar Rentals!</h4>
                                 </div>
 
-                                <form (submit)="register()">
+                                <form action="POST" #formData="ngForm" (ngSubmit)="enviarFormulario()">
                                     <p>Registra't per gaudir de noves experiències!</p>
 
                                     <div class="form-outline mb-4">
-                                        <input type="text" [(ngModel)]="usuario" id="form2Example11" class="form-control"
+                                        <input type="text" [(ngModel)]="usuario" name="usuario" class="form-control"
                                             placeholder="Usuari" />
-                                        <label class="form-label" for="form2Example11">Usuari</label>
+                                        <label class="form-label">Usuari</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="text" [(ngModel)]="nombre" id="form2Example22"
+                                        <input type="text" [(ngModel)]="nombre" name="nombre"
                                             class="form-control" placeholder="Nom" />
-                                        <label class="form-label" for="form2Example22">Nom</label>
+                                        <label class="form-label">Nom</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="text" [(ngModel)]="apellido" id="form2Example11" class="form-control"
-                                            placeholder="Cognom" />
-                                        <label class="form-label" for="form2Example11">Cognom</label>
+                                        <input type="text" [(ngModel)]="apellido" name="apellido"
+                                        class="form-control" placeholder="Cognom" />
+                                        <label class="form-label">Cognom</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" [(ngModel)]="email" id="form2Example11" class="form-control"
+                                        <input type="email" [(ngModel)]="email" name="email" class="form-control"
                                             placeholder="Correu electrònic" />
-                                        <label class="form-label" for="form2Example11">Correu electrònic</label>
+                                        <label class="form-label">Correu electrònic</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" [(ngModel)]="password" id="form2Example11" class="form-control"
+                                        <input type="password" [(ngModel)]="password" name="password" class="form-control"
                                             placeholder="Contrasenya" />
-                                        <label class="form-label" for="form2Example11">Contrasenya</label>
+                                        <label class="form-label">Contrasenya</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="number" [(ngModel)]="edad" id="form2Example11" class="form-control"
+                                        <input type="number" [(ngModel)]="edad" class="form-control" name="edad"
                                             placeholder="Edat" />
-                                        <label class="form-label" for="form2Example11">Edat</label>
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        <input type="image" [(ngModel)]="foto" id="form2Example11" class="form-control"
-                                            placeholder="Fotorgafia" />
-                                        <label class="form-label" for="form2Example11">Fotorgafia</label>
+                                        <label class="form-label">Edat</label>
                                     </div>
 
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                            type="submit">Accedir</button><br>
+                                            type="submit">Registrar-me</button><br>
                                         <a class="text-muted" href="#!">Has oblidat la contrasenya?</a>
                                     </div>
 

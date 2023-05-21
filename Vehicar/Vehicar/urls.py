@@ -7,6 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('Vehicar_Rentals.urls')),
     path('coches/<int:id>', CocheDetailView.as_view()),
-
-
+    path('api/', include('users.urls')),
 ]

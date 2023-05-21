@@ -25,7 +25,7 @@ SECRET_KEY = '7@hr%24!h@+!pq@4ggmj0xtjt-zj&5-k&)!g4i0adkb9=lsojw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Vehicar_Rentals',
+    'users',
     'rest_framework',
     'corsheaders',
 ]
@@ -107,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -145,3 +147,26 @@ ALLOWED_HOSTS = ['*']
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200'
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+]
+
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Accept-Language',
+    'Content-Language',
+    'Content-Type',
+    'Authorization'
+]
+
+AUTH_USER_MODEL = 'users.CustomUser'
