@@ -1,0 +1,11 @@
+Primer de tot, comprovem que tenim instal·lat Python en el nostre ordinador.
+
+INSTAL·LACIÓ
+
+Després, instal·lem Django amb la següent comanda:
+python3 -m pip install Django
+
+Ara comprovarem que ja s'ha instalat Django amb la següent comanda:
+django-admin --version
+
+INSTAL·LACIÓ ANGULAR
