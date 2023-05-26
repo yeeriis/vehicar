@@ -41,10 +41,11 @@
   
       </div>
       <!-- Collapsible wrapper -->
-      <!-- "{{ '{' }}" % if user.is_authenticated %"{{ '{' }}"
-        <div>Benvingut, "{{ '{' }}" user.email "{{ '}' }}"</div>
-      "{{ '{' }}" % endif % "{{ '}' }}" -->
-      
+      <!-- *ngFor="let user of user" -->
+      <div>
+        <a class="active links" href="/profile"><img src="images/user.foto">
+          <div>Benvingut,</div>user.email</a>
+      </div>
     </div>
     <!-- Container wrapper -->
   </nav>

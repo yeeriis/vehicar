@@ -14,6 +14,7 @@ class Coche(models.Model):
     tipo_motor = models.CharField(max_length = 100)
     caballos = models.CharField(max_length = 100)
     foto = models.ImageField(upload_to="images/", null=True, blank=True)
+    precio_alquiler = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.modelo

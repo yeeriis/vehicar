@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { CarsCardsComponent } from './cars-cards/cars-cards.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MainCarrouselComponent } from './main-carrousel/main-carrousel.component';
+import { HomeComponent } from './home/home.component';
+import { CarLeasingComponent } from './car-leasing/car-leasing.component';
 
 
 @NgModule({
@@ -26,6 +30,10 @@ import { UserRegisterComponent } from './user-register/user-register.component';
     CarsCardsComponent,
     CarDetailComponent,
     UserRegisterComponent,
+    UserProfileComponent,
+    MainCarrouselComponent,
+    HomeComponent,
+    CarLeasingComponent,
     
   ],
   imports: [

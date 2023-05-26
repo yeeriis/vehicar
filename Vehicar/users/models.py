@@ -48,7 +48,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     def __str__(self):
-        return self.apellido
+        return self.email
 
 
 class Alquiler(models.Model):
@@ -56,4 +56,7 @@ class Alquiler(models.Model):
     coche_alquilado = models.ForeignKey(Coche, null=True, on_delete = models.CASCADE)
     fecha_inicio_alquiler = models.DateField(max_length = 100)
     fecha_fin_alquiler = models.DateField(max_length = 100)
-    precio_alquiler = models.IntegerField()
+    precio_alquiler = models.CharField(max_length=1000, default= 10)
+
+    def __str__(self):
+        return self.email_usuario

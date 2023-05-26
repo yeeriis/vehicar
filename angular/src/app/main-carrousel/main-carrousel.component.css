@@ -1,0 +1,8 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
+.picsum-img-wrapper {
+    width: 50%;
+}
