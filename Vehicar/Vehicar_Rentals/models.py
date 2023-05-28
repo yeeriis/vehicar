@@ -17,7 +17,7 @@ class Coche(models.Model):
     precio_alquiler = models.CharField(max_length=1000)
 
     def __str__(self):
-        return self.modelo
+        return str(self.modelo)
         
 
 

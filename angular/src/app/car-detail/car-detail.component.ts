@@ -5,6 +5,7 @@ import { CarsService } from '../cars-cards/cars-cards.service';
 import { Coche } from './car.model';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-car-detail',
   templateUrl: './car-detail.component.html',
@@ -24,5 +25,4 @@ export class CarDetailComponent implements OnInit {
     this.carService.getCochesById(id).subscribe(coche => this.coche = coche);
   }
 
-  
 }

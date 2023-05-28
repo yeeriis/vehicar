@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { CarsService } from '../cars-cards/cars-cards.service';
+
 
 @Component({
   selector: 'app-car-leasing',
@@ -8,13 +10,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./car-leasing.component.css']
 })
 export class CarLeasingComponent{
+  cars: any;
   email_usuario:string;
   coche_alquilado:string;
   fecha_inicio_alquiler:string;
   fecha_fin_alquiler:string;
   precio_alquiler:string;
 
-  constructor(private http:HttpClient, private router:Router){ }
+  constructor(private http:HttpClient, private router:Router, private carsService: CarsService){ }
+
+  ngOnInit() {
+    this.getCars();
+  }
 
   alquiler() {
 
@@ -29,7 +36,7 @@ export class CarLeasingComponent{
 
     this.http.post( url, formData).subscribe(
       (response) => {
-        // console.log('Usuario creado crrectamente:', response);
+        console.log('Alquiler creado crrectamente:', response);
         this.router.navigate(['']);        
       },
       (error) => {
@@ -43,9 +50,16 @@ export class CarLeasingComponent{
 
     return this.http.get(url, formData);
   }
-  // ngOnInit(): void {
-  //   const id = Number(this.rutaCoche.snapshot.paramMap.get('id'));
-  //   this.carService.getCochesById(id).subscribe(coche => this.coche = coche);
-  // }
+  
+  getCars() {
+    this.carsService.getCars().subscribe(
+      data => {
+        this.cars = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
 }

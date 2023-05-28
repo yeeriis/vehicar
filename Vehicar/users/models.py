@@ -48,7 +48,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     def __str__(self):
-        return self.email
+        return str(self.email)
 
 
 class Alquiler(models.Model):
@@ -59,4 +59,4 @@ class Alquiler(models.Model):
     precio_alquiler = models.CharField(max_length=1000, default= 10)
 
     def __str__(self):
-        return self.email_usuario
+        return str(self.email_usuario)

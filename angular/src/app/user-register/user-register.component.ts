@@ -34,7 +34,7 @@ export class UserRegisterComponent {
 
     this.http.post( url, formData).subscribe(
       (response) => {
-        // console.log('Usuario creado crrectamente:', response);
+        console.log('Usuario creado correctamente:', response);
         this.router.navigate(['/login']);        
       },
       (error) => {

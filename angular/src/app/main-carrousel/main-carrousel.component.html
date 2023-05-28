@@ -1,20 +1,14 @@
-<ngb-carousel
-	#carousel
-	[interval]="3000"
-	[pauseOnHover]="pauseOnHover"
-	[pauseOnFocus]="pauseOnFocus"
-	(slide)="onSlide($event)"
->
-	<ng-template ngbSlide *ngFor="let img of images; index as i" class="w-50">
-		<div class="carousel-caption w-50">
-			<h3>My slide {{i + 1}} title</h3>
-		</div>
-		<a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
-			<div class="picsum-img-wrapper w-50">
-				<img [src]="img" alt="My image {{i + 1}} description" />
-			</div>
-		</a>
-	</ng-template>
-</ngb-carousel>
-
-<hr />
+<div class="container">
+	<div class=" card card1">
+		<h3 class="title">Líders en lloguers a nivell estatal</h3>
+	</div>
+	<div class=" card card2">
+		<h3 class="title">Segona companyia de lloguers amb millors ressenyes</h3>
+	</div>
+	<div class=" card card3">
+		<h3 class="title">Àmplia flota de vehicles</h3>
+	</div>
+	<div class=" card card4">
+		<h3 class="title">Mai et quedaràs sol. Assistència en carretera gratuïta</h3>
+	</div>
+</div>

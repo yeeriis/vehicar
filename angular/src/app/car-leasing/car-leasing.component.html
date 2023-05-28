@@ -22,25 +22,28 @@
                     </div>
     
                     <div class="form-outline mb-4">
-                        <input type="email" [(ngModel)]="coche_alquilado" name="coche_alquilado" id="form2Example11" class="form-control"
-                          placeholder="Vehicle a llogar" />
-                        <label class="form-label" for="form2Example11">Vehicle a llogar</label>
+                      <select  id="form2Example11" class="form-control">
+                        <!-- <input type="email" [(ngModel)]="coche_alquilado" name="coche_alquilado" id="form2Example11" class="form-control"
+                          placeholder="Vehicle a llogar" /> -->
+                          <option *ngFor="let car of cars" [value]="car.id">{{ car.marca}} {{car.modelo}}</option>
+                      </select>
+                      <label class="form-label" for="form2Example11">Vehicle a llogar</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="email" [(ngModel)]="fecha_inicio_alquiler" name="fecha_inicio_alquiler" id="form2Example11" class="form-control"
+                        <input type="date" [(ngModel)]="fecha_inicio_alquiler" name="fecha_inicio_alquiler" id="form2Example11" class="form-control"
                           placeholder="Data inici de lloguer" />
                         <label class="form-label" for="form2Example11">Data inici de lloguer</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="email" [(ngModel)]="fecha_fin_alquiler" name="fecha_fin_alquiler" id="form2Example11" class="form-control"
+                        <input type="date" [(ngModel)]="fecha_fin_alquiler" name="fecha_fin_alquiler" id="form2Example11" class="form-control"
                           placeholder="Data final de lloguer" />
                         <label class="form-label" for="form2Example11">Data final de lloguer</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="email" [(ngModel)]="precio_alquiler" name="precio_alquiler" id="form2Example11" class="form-control"
+                        <input type="number" [(ngModel)]="precio_alquiler" name="precio_alquiler" id="form2Example11" class="form-control"
                           placeholder="Preu del lloguer" />
                         <label class="form-label" for="form2Example11">Preu del lloguer</label>
                     </div>
