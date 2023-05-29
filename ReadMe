@@ -8,4 +8,24 @@ python3 -m pip install Django
 Ara comprovarem que ja s'ha instalat Django amb la següent comanda:
 django-admin --version
 
+Per a poder importar els models al servidor, ens hem de dirigir a la carpeta "vehicar" dins de la carpeta "Vehicar"
+Fem "python manage.py makemigrations" i seguidament "python manage.py migrate".
+
+Per a aixecar el servidor, hem d'escriure:
+
+python manage.py runserver
+I escriure localhost:8000 al nostre navegador
+
+Credencials admin django:
+user: admin
+contrasenya: admin1234
+
 INSTAL·LACIÓ ANGULAR
+
+Comprovem que tenim node.js instal·lat:
+node -v
+
+Instal·lem Angular CLI:
+npm install @angular/cli
+
+Per a executar el servidor Angular, hem d'escriure localhost:4200 al nostre navegador.
